@@ -40,47 +40,52 @@ namespace Deportistas
                 "Estudiante UV", "Derechohabiente", "Trabajador UV", "Condonado",
                 "Público en general", "Egresado UV", "Jubilado"
             };
-            cbTipo.ItemsSource = Tipos;
 
             Modalidades = new List<string>()
             {
                 "Libre", "Clase A 16 años", "Clase B 16 años", "Clase A 8 años",
                 "Clase B 8 años", "Clase trabajores", "Equipo natación", "Equipo triatlon"
             };
-            cbModalidad.ItemsSource = Modalidades;
 
             Horarios = new List<string>()
             {
                 "6:00 6:50", "7:00 7:50", "8:00 8:50", "12:00 12:50", "13:00 13:50",
                 "14:00 14:50", "15:00 15:50", "16:00 16:50 17:00 17:50", "18:00 18:50", "19:00 19:50"
             };
-            cbHorario.ItemsSource = Horarios;
 
             Sexo = new List<string>()
             {
                 "Masculino", "Femenino"
             };
             cbSexo.ItemsSource = Sexo;
+            tfTelefono.TextChanged += LimpiarCampo;
+            tfEdad.TextChanged += LimpiarCampo;
+            tfCorreo.TextChanged += LimpiarCampo;
         }
 
-        private void clicGuardar(object sender, RoutedEventArgs e)
+        private void tfEdad_TextChanged(object sender, TextChangedEventArgs e)
         {
-            DatosPersona persona = new DatosPersona
+            if (!EsNumero(tfEdad.Text))
             {
-                Codigo = tfCodigo.Text,
-                Nombre = tfNombre.Text,
-                Tipo = cbTipo.Text,
-                Modalidad = cbModalidad.Text,
-                Telefono = tfTelefono.Text,
-                Edad = tfEdad.Text,
-                NoCredencial = tfNoCredencial.Text,
-                Correo = tfCorreo.Text,
-                Horario = cbHorario.Text,
-                Sexo = cbSexo.Text
-            };
-            string filePath = "Deportistas.xlsx";
+                MessageBox.Show("La edad debe ser un valor numérico.", "Entrada no válida", MessageBoxButton.OK, MessageBoxImage.Warning);
+                tfEdad.Clear();
+            }
+        }
 
-            ExportarAExcel(persona, filePath);
+        private bool EsNumero(string texto)
+        {
+            return int.TryParse(texto, out _);
+        }
+
+        private void LimpiarCampo(object sender, TextChangedEventArgs e)
+        {
+            var campo = sender as Control;
+            campo.ClearValue(Border.BorderBrushProperty);
+        }
+
+        private void MarcarCampoVacio(Control campo)
+        {
+            campo.BorderBrush = Brushes.Red;
         }
 
         private void ExportarAExcel(DatosPersona persona, string filePath)
@@ -89,24 +94,19 @@ namespace Deportistas
 
             try
             {
-                // Intenta cargar el archivo Excel existente
                 workbook = new XLWorkbook(filePath);
             }
             catch (Exception ex)
             {
-                // Si se produce una excepción al cargar, crea un nuevo workbook
                 workbook = new XLWorkbook();
             }
 
             IXLWorksheet worksheet;
 
-            // Intenta cargar la hoja de trabajo existente o crear una nueva
             worksheet = workbook.Worksheets.FirstOrDefault(ws => ws.Name == "Personas") ?? workbook.Worksheets.Add("Personas");
 
-            // Encuentra la primera fila vacía en la hoja de trabajo
             int row = worksheet.LastRowUsed()?.RowNumber() + 1 ?? 2;
 
-            // Llena los datos en la siguiente fila vacía
             worksheet.Cell(row, 1).Value = persona.Codigo;
             worksheet.Cell(row, 2).Value = persona.Nombre;
             worksheet.Cell(row, 3).Value = persona.Tipo;
@@ -118,7 +118,6 @@ namespace Deportistas
             worksheet.Cell(row, 9).Value = persona.Horario;
             worksheet.Cell(row, 10).Value = persona.Sexo;
 
-            // Guarda el archivo de Excel
             try
             {
                 workbook.SaveAs(filePath);
@@ -128,6 +127,11 @@ namespace Deportistas
                 MessageBox.Show("Por favor cierre el documento excel para poder hacer un nuevo registro",
                     "El excel está abierto", MessageBoxButton.OK);
             }
+        }
+
+        private void clicGuardar(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

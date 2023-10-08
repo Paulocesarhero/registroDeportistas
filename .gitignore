@@ -144,3 +144,7 @@ _ReSharper*/
 # Archivos de caché específicos de Visual Studio
 .vscode/.cache/
 .vscode/.server/
+Deportistas.exe - Acceso directo.lnk
+Deportistas.xlsx - Acceso directo.lnk
+Deportistas/Imagenes/
+Deportistas/Properties/
