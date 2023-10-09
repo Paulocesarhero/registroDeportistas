@@ -98,7 +98,7 @@ namespace Deportistas.Dominio
         public string Colonia { get; set; }
         public string Delegacion { get; set; }
         public decimal PesoKg { get; set; }
-        public int EstaturaCm { get; set; }
+        public decimal EstaturaCm { get; set; }
         public string TallaInt { get; set; }
         public string TallaExt { get; set; }
         public string NoCalzado { get; set; }

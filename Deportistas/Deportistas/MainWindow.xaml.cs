@@ -205,7 +205,7 @@ namespace Deportistas
                     Colonia = tfColonia.Text,
                     Delegacion = tfDelegacion.Text,
                     PesoKg = decimal.Parse(tfPesoKg.Text),
-                    EstaturaCm = int.Parse(tfEstaturaCm.Text),
+                    EstaturaCm = decimal.Parse(tfEstaturaCm.Text),
                     TallaInt = tfTallaInt.Text,
                     TallaExt = tfTallaExt.Text,
                     NoCalzado = tfNoCalzado.Text
