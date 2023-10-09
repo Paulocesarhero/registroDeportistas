@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainWindow"
     Width="800"
-    Height="800"
+    Height="850"
     mc:Ignorable="d">
     <StackPanel Orientation="Vertical">
         <Grid>
@@ -30,8 +30,14 @@
                     Stretch="Uniform" />
             </StackPanel>
         </Grid>
-        <TextBlock HorizontalAlignment="Center" Style="{StaticResource MaterialDesignHeadline5TextBlock}" Text="Registro deportistas" />
-        <Button Click="clicGuardar" Content="Guardar"  Margin="40,4" />
+        <TextBlock
+            HorizontalAlignment="Center"
+            Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+            Text="Registro deportistas" />
+        <Button
+            Margin="40,4"
+            Click="clicGuardar"
+            Content="Guardar" />
         <Grid
             Width="Auto"
             Margin="8"
@@ -67,6 +73,7 @@
 
                 <DatePicker
                     Margin="0,5"
+                    Name="dpFechaNacimiento"
                     materialDesign:HintAssist.Hint="Fecha de nacimiento"
                     Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
 
@@ -82,7 +89,7 @@
                     Margin="0,5"
                     materialDesign:HintAssist.Hint="Edad"
                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                    TextChanged="tfEdad_TextChanged" />
+                    PreviewTextInput="textBoxNumeric_PreviewTextInput" />
                 <TextBox
                     Name="tfCurp"
                     Margin="0,5"
@@ -93,6 +100,7 @@
                 <TextBox
                     Name="tfTelefono"
                     Margin="0,5"
+                    PreviewTextInput="textBoxNumeric_PreviewTextInput"
                     materialDesign:HintAssist.Hint="Telefono"
                     Style="{StaticResource MaterialDesignOutlinedTextBox}" />
 
@@ -104,6 +112,7 @@
 
                     <TextBox
                         Name="tfNumInterior"
+                        PreviewTextInput="textBoxNumeric_PreviewTextInput"
                         Grid.Column="0"
                         HorizontalAlignment="Stretch"
                         materialDesign:HintAssist.Hint="No interior"
@@ -111,6 +120,8 @@
 
                     <TextBox
                         Name="tfNumExterior"
+                        PreviewTextInput="textBoxNumeric_PreviewTextInput"
+
                         Grid.Column="1"
                         HorizontalAlignment="Stretch"
                         materialDesign:HintAssist.Hint="No exterior"
@@ -149,12 +160,12 @@
                     materialDesign:HintAssist.Hint="Semestre"
                     Style="{StaticResource MaterialDesignOutlinedComboBox}" />
 
-                <ComboBox
-                    Name="cbDeporte"
+                <TextBox
+                    Name="tbDeporte"
                     Width="auto"
                     Margin="0,5"
                     materialDesign:HintAssist.Hint="Deporte"
-                    Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
                 <TextBox
                     Name="tfMatricula"
                     Margin="0,5"
@@ -195,11 +206,12 @@
                 Grid.Column="2"
                 Margin="5,0"
                 VerticalAlignment="Top">
-                <materialDesign:TimePicker
-                    Name="tpFechaIngresoIES"
+
+                <DatePicker
+                    Name="dpFechaIngresoIES"
                     Margin="0,5"
                     materialDesign:HintAssist.Hint="Fecha de ingreso IES"
-                    Style="{StaticResource MaterialDesignOutlinedTimePicker}" />
+                    Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
 
                 <TextBox
                     Name="tfNoSeguro"
@@ -221,6 +233,7 @@
 
                 <TextBox
                     Name="tfPesoKg"
+                    PreviewTextInput="textBoxNumeric_PreviewTextInput"
                     Margin="0,5"
                     materialDesign:HintAssist.Hint="Peso en kg"
                     Style="{StaticResource MaterialDesignOutlinedTextBox}" />
@@ -228,11 +241,15 @@
                 <TextBox
                     Name="tfEstaturaCm"
                     Margin="0,5"
+                    PreviewTextInput="textBoxNumeric_PreviewTextInput"
+
                     materialDesign:HintAssist.Hint="Estatura en CM"
                     Style="{StaticResource MaterialDesignOutlinedTextBox}" />
 
                 <TextBox
                     Name="tfTallaInt"
+                    PreviewTextInput="textBoxNumeric_PreviewTextInput"
+
                     Margin="0,5"
                     materialDesign:HintAssist.Hint="Talla Int"
                     Style="{StaticResource MaterialDesignOutlinedTextBox}" />
@@ -241,11 +258,15 @@
                     Name="tfTallaExt"
                     Margin="0,5"
                     materialDesign:HintAssist.Hint="Talla Ext"
+                    PreviewTextInput="textBoxNumeric_PreviewTextInput"
+
                     Style="{StaticResource MaterialDesignOutlinedTextBox}" />
 
                 <TextBox
                     Name="tfNoCalzado"
                     Margin="0,5"
+                    PreviewTextInput="textBoxNumeric_PreviewTextInput"
+
                     materialDesign:HintAssist.Hint="NO. Calzado"
                     Style="{StaticResource MaterialDesignOutlinedTextBox}" />
             </StackPanel>
