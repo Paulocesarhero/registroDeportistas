@@ -1,0 +1,287 @@
+﻿<Window
+    x:Class="Deportistas.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Deportistas"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Dirección de actividades deportivas de la Universidad Veracruzana"
+    Width="800"
+    Height="850"
+    mc:Ignorable="d">
+    <StackPanel Orientation="Vertical">
+        <Grid>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Image
+                    Width="100"
+                    Height="100"
+                    Source="/Imagenes/halcone-removebg.png"
+                    Stretch="Uniform" />
+                <Image
+                    Width="100"
+                    Height="100"
+                    Source="/Imagenes/LIS-removebg.png"
+                    Stretch="Uniform" />
+                <Image
+                    Width="100"
+                    Height="74"
+                    Source="/Imagenes/Conde-removebg.png"
+                    Stretch="Uniform" />
+            </StackPanel>
+        </Grid>
+        <TextBlock
+            HorizontalAlignment="Center"
+            Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+            Text="Registro deportistas" />
+        <Button
+            Width="160"
+            Margin="40,4"
+            Click="clicGuardar"
+            Content="Guardar" />
+        <Grid
+            Width="Auto"
+            Margin="50"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--  Columna 1  -->
+            <StackPanel
+                Grid.Column="0"
+                Margin="5,0"
+                VerticalAlignment="Top">
+                <TextBox
+                    Name="tfApellidoPaterno"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Apellido paterno"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+                <TextBox
+                    Name="tfApellidoMaterno"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Apellido materno"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+                <TextBox
+                    Name="tfNombres"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Nombres"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+                <DatePicker
+                    Name="dpFechaNacimiento"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Fecha de nacimiento"
+                    Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
+
+                <ComboBox
+                    Name="cbSexo"
+                    Width="auto"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Sexo"
+                    Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+                <ComboBox
+                    Name="cbEdad"
+                    Width="auto"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Edad"
+                    Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+
+                <TextBox
+                    Name="tfCurp"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Curp"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+                <TextBox
+                    Name="tfTelefono"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Telefono"
+                    PreviewTextInput="textBoxNumeric_PreviewTextInput"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+            </StackPanel>
+
+            <!--  Columna 2  -->
+            <StackPanel
+                Grid.Column="1"
+                Margin="5,0"
+                VerticalAlignment="Top">
+                <Grid Margin="0,5" HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox
+                        Name="tfNumInterior"
+                        Grid.Column="0"
+                        HorizontalAlignment="Stretch"
+                        materialDesign:HintAssist.Hint="No interior"
+                        PreviewTextInput="textBoxNumeric_PreviewTextInput"
+                        Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+                    <TextBox
+                        Name="tfNumExterior"
+                        Grid.Column="1"
+                        HorizontalAlignment="Stretch"
+                        materialDesign:HintAssist.Hint="No exterior"
+                        PreviewTextInput="textBoxNumeric_PreviewTextInput"
+                        Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+                </Grid>
+
+                <ComboBox
+                    Name="cbEstado"
+                    Width="auto"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Estado"
+                    Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+
+                <TextBox
+                    Name="tfCorreo"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Correo"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+                <TextBox
+                    Name="tfIntitucion"
+                    Margin="0,5"
+                    Text="Universidad Veracruzana"
+                    IsReadOnly="True"
+                    materialDesign:HintAssist.Hint="Institución"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+                <ComboBox
+                    Name="cbSemestre"
+                    Width="auto"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Semestre"
+                    Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+
+                <ComboBox
+                    Name="cbDeporte"
+                    Width="auto"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Deporte"
+                    Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+                <TextBox
+                    Name="tfMatricula"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Matricula"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+            </StackPanel>
+            <StackPanel
+                Grid.Column="2"
+                Margin="5,0"
+                VerticalAlignment="Top">
+
+                <ComboBox
+                    Name="cbGrado"
+                    Width="auto"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Grado"
+                    Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+                <ComboBox
+                    Name="cbNombreGrado"
+                    Width="auto"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Nombre de grado"
+                    Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+
+                <TextBox
+                    Name="tfFacultad"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Facultad"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+                <TextBox
+                    Name="tfPlanDeEstudios"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Plan de estudios"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+                <DatePicker
+                    Name="dpFechaIngresoIES"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Fecha de ingreso IES"
+                    Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
+
+                <TextBox
+                    Name="tfNoSeguro"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="No. Seguro Facultativo"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+                <TextBox
+                    Name="tfColonia"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Colonia"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+                <ComboBox
+                    Name="cbRegion"
+                    Width="auto"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Región"
+                    Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+            </StackPanel>
+            <StackPanel
+                Grid.Column="3"
+                Margin="5,0"
+                VerticalAlignment="Top">
+
+                <ComboBox
+                    Name="cbArea"
+                    Width="auto"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Area"
+                    Style="{StaticResource MaterialDesignOutlinedComboBox}" />
+
+                <TextBox
+                    Name="tfDelegacion"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Delegación o municipio"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+                <TextBox
+                    Name="tfPesoKg"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Peso en kg"
+                    PreviewTextInput="textBoxNumeric_PreviewTextInput"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+                <TextBox
+                    Name="tfEstaturaCm"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Estatura en CM"
+                    PreviewTextInput="textBoxNumeric_PreviewTextInput"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+                <TextBox
+                    Name="tfTallaInt"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Talla Int"
+                    PreviewTextInput="textBoxNumeric_PreviewTextInput"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+                <TextBox
+                    Name="tfTallaExt"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="Talla Ext"
+                    PreviewTextInput="textBoxNumeric_PreviewTextInput"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+
+                <TextBox
+                    Name="tfNoCalzado"
+                    Margin="0,5"
+                    materialDesign:HintAssist.Hint="NO. Calzado"
+                    PreviewTextInput="textBoxNumeric_PreviewTextInput"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}" />
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</Window>

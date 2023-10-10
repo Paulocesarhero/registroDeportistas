@@ -1,0 +1,150 @@
+# Archivos generados por Visual Studio
+.vscode/
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+*.sln.docstates
+
+# Carpeta de paquetes NuGet
+packages/
+
+# Carpeta de respaldo de Visual Studio
+Backup*/
+
+# Carpeta de caché de ReSharper
+_ReSharper*/
+
+# Carpeta de caché de Rider
+.idea/
+
+# Carpeta de caché de Visual Studio Code
+.vscode/
+
+# Archivos de configuración local de usuario
+appsettings.json
+*.user
+
+# Archivo de registro
+*.log
+
+# Archivo de historial de cambios
+ChangeLog.txt
+
+# Archivo de configuración de Roslyn
+*.editorconfig
+
+# Archivo de configuración de Rider
+.idea/
+
+# Carpeta de archivos temporales
+[Tt]emp/
+[Bb]in/
+[Bb]in64/
+[Oo]bj/
+[Ii]nt/
+
+# Archivo de configuración de ReSharper
+_ReSharper.*/
+*.sln.iml
+
+# Archivo de configuración de Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Archivos de respaldo generados por Visual Studio
+*.[Bb]ak
+*.[Dd]eploy
+*.[Ll]og
+
+# Archivo de usuario de Visual Studio
+*.suo
+*.user
+*.userosscache
+
+# Archivos de configuración de usuario de Rider
+.idea/
+*.suo
+*.user
+*.userosscache
+
+# Carpeta de respaldo de Rider
+.idea
+
+# Archivos de configuración de Rider
+*.sln.iml
+*.ipr
+*.iws
+
+# Carpeta de caché de Rider
+.idea/caches/
+.idea/libraries/
+
+# Carpetas y archivos específicos para proyectos
+/.vscode/
+/*.suo
+/*.user
+/*.userosscache
+/*.log
+/Backup*/
+/.vs/
+/publish/
+/_publish/
+/*.dbmdl
+/*.jfm
+*.sqlite
+*/_db
+*/_iis
+
+# Archivos específicos de ReSharper
+_ReSharper*/
+*.sln.iml
+*.suo
+*.user
+*.userosscache
+.idea/
+*.resharper
+*.sln.iml
+
+# Archivos específicos de Rider
+.idea/
+*.suo
+*.user
+*.userosscache
+.idea/
+*.sln.iml
+
+# Archivos de configuración específicos de Rider
+.idea/
+.idea/*.xml
+.idea/dictionaries/
+.idea/inspectionProfiles/
+.idea/libraries/
+.idea/modules/
+.idea/scopes/
+.idea/uiDesigner.xml
+
+# Archivos específicos de Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Archivos de caché específicos de Visual Studio Code
+.vscode/.cache/
+.vscode/.server/
+
+# Archivos específicos de Visual Studio
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Archivos de caché específicos de Visual Studio
+.vscode/.cache/
+.vscode/.server/
+Deportistas.exe - Acceso directo.lnk
+Deportistas.xlsx - Acceso directo.lnk
+Deportistas/Imagenes/
+Deportistas/Properties/
