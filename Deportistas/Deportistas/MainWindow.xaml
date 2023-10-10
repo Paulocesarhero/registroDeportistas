@@ -141,7 +141,6 @@
                     Margin="0,5"
                     materialDesign:HintAssist.Hint="Estado"
                     Style="{StaticResource MaterialDesignOutlinedComboBox}" />
-
                 <TextBox
                     Name="tfCorreo"
                     Margin="0,5"
